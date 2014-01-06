@@ -1,0 +1,37 @@
+{
+  "title": "Wall",
+  "type": "object",
+  "properties": {
+    "album": {
+      "type": "object",
+      "title": "Album Selector",
+      "albumSelector": true
+    },
+    "albumOptions": {
+      "title": "Album Options",
+      "type": "object",
+      "properties": {
+        "sort": {
+          "title": "Sorting",
+          "type": "string",
+          "default": "id",
+          "oneOf": [
+            {
+              "pattern": "id",
+              "title": "Newest First"
+            },
+            {
+              "pattern": "hearts",
+              "title": "Highest Rated"
+            }
+          ]
+        },
+        "per_page": {
+          "title": "Photos per page",
+          "default": 30,
+          "type": "integer"
+        }
+      }
+    }
+  }
+}

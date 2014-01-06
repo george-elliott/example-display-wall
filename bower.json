@@ -1,0 +1,19 @@
+{
+  "name": "wall",
+  "version": "0.0.0",
+  "authors": [
+    "Chute <hello@getchute.com>"
+  ],
+  "description": "Wall",
+  "private": true,
+  "dependencies": {
+    "displays": "https://7fdefe740cd6e7a2642a70ca72fcf7420bf6c23e:x-oauth-basic@github.com/chute/displays.git#~2.2.1"
+  },
+  "ignore": [
+    "**/.*",
+    "/node_modules",
+    "/components",
+    "/test",
+    "/tests"
+  ]
+}
