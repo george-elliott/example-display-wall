@@ -14,10 +14,10 @@
         "sort": {
           "title": "Sorting",
           "type": "string",
-          "default": "id",
+          "default": "time",
           "oneOf": [
             {
-              "pattern": "id",
+              "pattern": "time",
               "title": "Newest First"
             },
             {
@@ -30,6 +30,145 @@
           "title": "Photos per page",
           "default": 30,
           "type": "integer"
+        }
+      }
+    },
+    "enable": {
+      "title": "Wall Options",
+      "type": "object",
+      "properties": {
+        "masonry": {
+          "type": "boolean",
+          "default": true
+        },
+        "infiniteScroll": {
+          "type": "boolean",
+          "default": true
+        }
+      }
+    },
+    "itemViewOptions": {
+      "title": "Tile Settings",
+      "type": "object",
+      "properties": {
+        "enable": {
+          "title": "Show",
+          "type": "object",
+          "group": true,
+          "properties": {
+            "avatar": {
+              "type": "boolean",
+              "default": true
+            },
+            "username": {
+              "type": "boolean",
+              "default": true
+            },
+            "caption": {
+              "type": "boolean",
+              "default": true
+            },
+            "time": {
+              "type": "boolean",
+              "default": true
+            },
+            "hearting": {
+              "title": "Voting",
+              "type": "boolean",
+              "default": true
+            }
+          }
+        },
+
+        "width": {
+          "type": "integer",
+          "default": 250
+        },
+        "margin": {
+          "type": "integer",
+          "default": 10
+        },
+        "padding": {
+          "type": "integer",
+          "default": 10
+        },
+
+        "lightboxOptions": {
+          "title": "Lightbox Settings",
+          "type": "object",
+          "properties": {
+            "width": {
+              "type": "integer",
+              "default": 400
+            },
+            "enable": {
+              "title": "Show",
+              "type": "object",
+              "group": true,
+              "properties": {
+                "avatar": {
+                  "type": "boolean",
+                  "default": true
+                },
+                "username": {
+                  "type": "boolean",
+                  "default": true
+                },
+                "caption": {
+                  "type": "boolean",
+                  "default": true
+                },
+                "time": {
+                  "type": "boolean",
+                  "default": true
+                },
+                "hearting": {
+                  "title": "Voting",
+                  "type": "boolean",
+                  "default": true
+                },
+
+                "sharing": {
+                  "group": true,
+                  "type": "object",
+                  "properties": {
+                    "facebook": {
+                      "type": "boolean",
+                      "default": true
+                    },
+                    "twitter": {
+                      "type": "boolean",
+                      "default": true
+                    },
+                    "tumblr": {
+                      "type": "boolean",
+                      "default": true
+                    },
+                    "pinterest": {
+                      "type": "boolean",
+                      "default": true
+                    },
+                    "googleplus": {
+                      "title": "Google+",
+                      "type": "boolean",
+                      "default": true
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "awesmOptions": {
+      "title": "Awe.sm Config",
+      "type": "object",
+      "properties": {
+        "name": {
+          "title": "Default Sharing Text",
+          "type": "string",
+          "default": "Found a great photo, see it here: "
         }
       }
     }
