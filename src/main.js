@@ -52,6 +52,6 @@ define(
     }
   };
 
-  var DisplayRunner = new Runner('wall', Layout, Schema, demoConfig);
+  var DisplayRunner = new Runner('Wall', Layout, Schema, demoConfig);
 });
 
