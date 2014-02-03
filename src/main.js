@@ -12,7 +12,7 @@ define(
   var demoConfig = {
     id: "demo-wall",
     album: {
-      url: "//api.getchute.com/v2/albums/at3epsrk"
+      url: "//api.getchute.com/v2/albums/9IZukfpi"
     },
     albumOptions: {
       per_page: 30,
