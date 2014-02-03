@@ -11,6 +11,7 @@ define(
 
   // White Decent Asset View, Go!
   return AssetView.extend({
+    template: AssetTemplate,
     lightboxViewType: AssetLightboxView
   });
 });
