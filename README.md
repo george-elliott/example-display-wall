@@ -1,6 +1,6 @@
-# Wall
+#Wall
 
-Standard "White Decent" wall, a workspace standard display.
+Standard "White Decent" wall with support for tweets, a workspace standard display.
 
 ## Installation
 
