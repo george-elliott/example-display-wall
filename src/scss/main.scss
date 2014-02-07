@@ -64,6 +64,10 @@
 
     .chute-asset {
       position: relative;
+
+      &.tweet {
+        text-align: center;
+      }
     }
 
     .icon-videocam {
