@@ -67,6 +67,12 @@
 
       &.tweet {
         text-align: center;
+        line-height: 22px;
+        letter-spacing: -.5px;
+        font-weight: 100;
+        a {
+          color: #30a5dc;
+        }
       }
     }
 
