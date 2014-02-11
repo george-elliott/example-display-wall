@@ -15,9 +15,7 @@ define(
     template: TweetTemplate,
     onRender: function() {
       var view = this;
-      view.$('.chute-user-avatar').on('load error', function() {
-        view.triggerMethod('load:success', view);
-      });
+      view.triggerMethod('load:success', view);
     }
   });
 });
