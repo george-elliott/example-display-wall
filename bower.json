@@ -7,7 +7,8 @@
   "description": "Wall",
   "private": true,
   "dependencies": {
-    "displays": "https://7fdefe740cd6e7a2642a70ca72fcf7420bf6c23e:x-oauth-basic@github.com/chute/displays.git#2.3.0"
+    "displays": "git@github.com:chute/displays.git#2.3.0",
+    "analytics": "git@github.com:chute/analytics.js.git#features/new-pixel"
   },
   "ignore": [
     "**/.*",
@@ -15,5 +16,8 @@
     "/components",
     "/test",
     "/tests"
-  ]
+  ],
+  "resolutions": {
+    "analytics": "features/new-pixel"
+  }
 }
