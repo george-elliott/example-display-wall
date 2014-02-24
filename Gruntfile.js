@@ -95,6 +95,30 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: pkg,
 
+    notify_hooks: {
+      options: {
+        enabled: true,
+        max_jshint_notifications: 1 // maximum number of notifications from jshint output
+      }
+    },
+    notify: {
+      run: {
+        options: {
+          message: 'Server started on port ' + PORT
+        }
+      },
+      watch: {
+        options: {
+          message: 'Rebuild Complete'
+        }
+      },
+      deploy: {
+        options: {
+          message: 'Project deployed!'
+        }
+      }
+    },
+
     // CSS Pipeline: scss >> tmp dir >> template replace >> copy.
     // I can't figure out how to get compass to support multiple input and output folders with task, help appreciated.
     compass: {
@@ -174,7 +198,7 @@ module.exports = function(grunt) {
       },
       js: {
         files: ['src/**/**.js', 'src/**/**.hbs', 'src/**/*.json'],
-        tasks: ['jshint:check_for_develop', 'requirejs'],
+        tasks: ['jshint:check_for_develop', 'requirejs', 'notify:watch'],
         options: {
           spawn: false
         }
@@ -309,6 +333,9 @@ module.exports = function(grunt) {
 
   });
 
+  grunt.loadNpmTasks('grunt-notify');
+  grunt.task.run('notify_hooks');
+
   grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-watch');
@@ -321,7 +348,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-invalidate-cloudfront');
 
   grunt.registerTask('build', ['jshint:check_for_develop', 'compass', 'replace', 'copy', 'clean', 'requirejs']);
-  grunt.registerTask('deploy', ['jshint:check_for_deploy', 'build', 's3', 'invalidate_cloudfront']);
-  grunt.registerTask('run', ['build', 'connect', 'watch']);
+  grunt.registerTask('deploy', ['jshint:check_for_deploy', 'build', 's3', 'invalidate_cloudfront', 'notify:deploy']);
+  grunt.registerTask('run', ['build', 'connect', 'notify:run', 'watch']);
 
 };
