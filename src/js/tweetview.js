@@ -15,7 +15,9 @@ define(
     template: TweetTemplate,
     onRender: function() {
       var view = this;
-      view.triggerMethod('load:success', view);
+      setTimeout(function() {
+        view.triggerMethod('load:success', view);
+      });
     }
   });
 });

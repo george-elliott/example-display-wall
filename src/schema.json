@@ -5,8 +5,12 @@
     "album": {
       "type": "object",
       "title": "Album Selector",
-      "albumSelector": true
+      "albumSelector": true,
+      "default": {
+        "shortcut": "atMxufhj"
+      }
     },
+
     "albumOptions": {
       "title": "Album Options",
       "type": "object",
@@ -161,14 +165,67 @@
         }
       }
     },
+
     "awesmOptions": {
-      "title": "Awe.sm Config",
+      "title": "Sharing Options",
       "type": "object",
       "properties": {
-        "name": {
-          "title": "Default Sharing Text",
-          "type": "string",
-          "default": "Found a great photo, see it here: "
+        "facebook": {
+          "type": "object",
+          "properties": {
+            "app_id": {
+              "title": "Application ID",
+              "type": "string",
+              "default": "418143708282236"
+            },
+            "redirect_uri": {
+              "title": "Redirect URI",
+              "type": "string",
+              "default": "http://getchute.com/"
+            },
+            "caption": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            }
+          }
+        },
+        "twitter": {
+          "type": "object",
+          "properties": {
+            "caption": {
+              "type": "string"
+            },
+            "via": {
+              "type": "string"
+            },
+            "hashtags": {
+              "type": "string"
+            },
+            "related": {
+              "type": "string"
+            }
+          }
+        },
+        "pinterest": {
+          "type": "object",
+          "properties": {
+            "caption": {
+              "type": "string"
+            }
+          }
+        },
+        "tumblr": {
+          "type": "object",
+          "properties": {
+            "caption": {
+              "type": "string"
+            }
+          }
         }
       }
     }

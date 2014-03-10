@@ -243,11 +243,10 @@
       .chute-previous, .chute-next {
         position: absolute;
         z-index: 1;
-        height: "{{itemViewOptions.lightboxOptions.width}}px";
-        line-height: "{{itemViewOptions.lightboxOptions.width}}px";
+        height: "{{divideByTwo itemViewOptions.lightboxOptions.width}}px";
+        line-height: "{{divideByTwo itemViewOptions.lightboxOptions.width}}px";
         width: 50px;
-        top: 0;
-        bottom: 0;
+        top: "{{divideByFour itemViewOptions.lightboxOptions.width}}px";
         cursor: pointer;
         font-size: 34px;
         color: #484848;
@@ -425,7 +424,21 @@
         cursor: pointer;
         color: #c4c9cd;
         &:hover {
-          color: #cccccc;
+          &.facebook {
+            color: #3b5998;
+          }
+          &.twitter {
+            color: #00aced;
+          }
+          &.tumblr {
+            color: #32506d;
+          }
+          &.pinterest {
+            color: #cb2027;
+          }
+          &.googleplus {
+            color: #dd4b39;
+          }
         }
         &:first-child {
           border-left: none;
