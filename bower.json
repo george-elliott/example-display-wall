@@ -7,7 +7,7 @@
   "description": "Wall",
   "private": true,
   "dependencies": {
-    "displays": "git@github.com:chute/displays.git#~2.5.2"
+    "displays": "git@github.com:chute/displays.git#features/playlist"
   },
   "ignore": [
     "**/.*",

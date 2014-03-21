@@ -2,7 +2,7 @@ define(
   [
     'core/assetview',
     'hbs!src/templates/tweet',
-    'src/js/assetlightboxview'
+    'src/js/lightboxview'
   ], function(
     AssetView,
     TweetTemplate,

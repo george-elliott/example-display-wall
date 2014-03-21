@@ -60,7 +60,8 @@ module.exports = function(grunt) {
       'matches-selector': '../../matches-selector',
       'moment': '../../moment/moment',
       'json': '../../requirejs-plugins/src/json',
-      'text': '../../requirejs-plugins/lib/text'
+      'text': '../../requirejs-plugins/lib/text',
+      'async': '../../async/lib/async'
     },
     hbs: {
       helperPathCallback: function(name) {
