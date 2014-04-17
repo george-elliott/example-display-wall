@@ -12,12 +12,22 @@ define(
   ) {
 
     return WallLayout.extend({
+      wallViewType: WallView,
+      cssTemplate: WallCss,
+
       initialize: function(options) {
         if (!options) { options = {}; }
         AWESM.ensureAWESM(options.awesmOptions);
+        this.analytics.pageview();
         return WallLayout.prototype.initialize.call(this, options);
       },
-      wallViewType: WallView,
-      cssTemplate: WallCss
+
+      onShow: function() {
+        WallLayout.prototype.onShow.apply(this, arguments);
+
+        if (this.options.enable.liveUpdate) {
+          this.options.collection.startPolling();
+        }
+      }
     });
 });
