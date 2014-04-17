@@ -60,8 +60,7 @@ module.exports = function(grunt) {
       'matches-selector': '../../matches-selector',
       'moment': '../../moment/moment',
       'json': '../../requirejs-plugins/src/json',
-      'text': '../../requirejs-plugins/lib/text',
-      'async': '../../async/lib/async'
+      'text': '../../requirejs-plugins/lib/text'
     },
     hbs: {
       helperPathCallback: function(name) {
@@ -264,6 +263,14 @@ module.exports = function(grunt) {
       }
     },
 
+    zschema: {
+      build: {
+        files: {
+          'src/schema.json': []
+        }
+      }
+    },
+
     requirejs: requireConfig,
 
     s3: {
@@ -343,11 +350,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-z-schema');
   grunt.loadNpmTasks('grunt-text-replace');
   grunt.loadNpmTasks('grunt-s3');
   grunt.loadNpmTasks('grunt-invalidate-cloudfront');
 
-  grunt.registerTask('build', ['jshint:check_for_develop', 'compass', 'replace', 'copy', 'clean', 'requirejs']);
+  grunt.registerTask('build', ['jshint:check_for_develop', 'zschema', 'compass', 'replace', 'copy', 'clean', 'requirejs']);
   grunt.registerTask('deploy', ['jshint:check_for_deploy', 'build', 's3', 'invalidate_cloudfront', 'notify:deploy']);
   grunt.registerTask('run', ['build', 'connect', 'notify:run', 'watch']);
 
