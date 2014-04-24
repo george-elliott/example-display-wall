@@ -17,7 +17,7 @@ define(
         return this.getItemViewType(options);
       },
       getItemViewType: function(options) {
-        if (options.model.get("type") === "tweet") {
+        if (options.model.get("type") === "text") {
           return new TweetView(options);
         } else {
           return new AssetView(options);
