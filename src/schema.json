@@ -181,7 +181,7 @@
             "redirect_uri": {
               "title": "Redirect URI",
               "type": "string",
-              "default": "http://getchute.com/"
+              "default": "http://www.getchute.com/close"
             },
             "caption": {
               "type": "string"
