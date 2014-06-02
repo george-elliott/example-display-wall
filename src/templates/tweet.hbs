@@ -1,7 +1,4 @@
-<div class="chute-asset tweet">
-  <p class="chute-asset-caption">{{formatTweet caption}}</p>
-</div>
-
+{{full_name}}
 <div class="chute-detail">
   <div class="chute-detail-header">
     {{# if enable.avatar}}
@@ -23,11 +20,11 @@
                 target="_blank"
                 class="chute-user-username">
 
-                {{#if username}}{{username}}{{else}}Anonymous{{/if}}
+                {{#if username}}@{{username}}{{else}}Anonymous{{/if}}
               </a>
             {{else}}
               <span class="chute-user-username">
-                {{#if username}}{{username}}{{else}}Anonymous{{/if}}
+                {{#if username}}@{{username}}{{else}}Anonymous{{/if}}
               </span>
             {{/if}}
           {{/if}}
@@ -37,16 +34,11 @@
         </div>
       </div>
     </div>
-    {{#if enable.hearting}}
-      <div class="chute-heart-widget{{#if hearted}} chute-hearted{{/if}}">
-        <div class="chute-table">
-          <div class="chute-table-vcenter">
-            <i class="icon-ok-circled2"/>
-            <p class="chute-inactive chute-heart-count">{{ hearts }}</p>
-            <p class="chute-active">VOTE</p>
-          </div>
-        </div>
-      </div>
-    {{/if}}
+
   </div>
 </div>
+
+<div class="chute-asset tweet">
+  <p class="chute-asset-caption">{{formatTweet caption}}</p>
+</div>
+

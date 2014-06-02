@@ -18,6 +18,15 @@ define(
       setTimeout(function() {
         view.triggerMethod('load:success', view);
       });
+    },
+    serializeData: function() {
+      var data = this.model.toJSON();
+
+      data.full_name = this.model.attributes.user.name;
+      data.enable = this.options.enable;
+      data.asset_url = data.url + '/w/' + this.options.width;
+
+      return data;
     }
   });
 });
