@@ -63,7 +63,6 @@ define(
           this.triggerMethod('itemviews:load', this.pendingViews);
           this.loadedViews = [];
           this.pendingViews = [];
-
           // var that = this;
           // setTimeout(function() { that.masonry.layout();}, 1300);
         }
@@ -75,6 +74,7 @@ define(
         if (this.currentPage === 1) {
           var that = this;
           setTimeout(function() { that.masonry.layout();}, 1250);
+          this.masonry.layout();
         } else {
           this.masonry.layout();
         }
