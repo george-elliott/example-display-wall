@@ -46,6 +46,7 @@
     }
   }
 
+
   .chute-asset-view {
     overflow: hidden;
     width: "{{itemViewOptions.width}}px";
@@ -54,13 +55,32 @@
     margin-right: "{{itemViewOptions.margin}}px";
     /*!{{/unless}}*/
     margin-bottom: "{{itemViewOptions.margin}}px";
-    @include box-shadow(0 0 4px rgba(0,0,0,.3));
+    // @include box-shadow(0 0 4px rgba(0,0,0,.3));
 
     @include opacity(1);
     @include transition(opacity, 0.5s, ease-in-out);
     &.chute-component-loading {
       @include opacity(0);
     }
+
+    &.instagram {
+      background-color: #fdf8f2;
+      box-shadow: rgba(0, 0, 0, 0.14902) 0px 1px 3px;
+      border-radius: 5px;
+    }
+
+    &.instagram-native {
+      background-color: #fdf8f2;
+      box-shadow: rgba(0, 0, 0, 0.14902) 0px 1px 3px;
+      border-radius: 5px;
+      height: 397px;
+    }
+
+    &.twitter {
+      padding: 0;
+      width: calc("{{itemViewOptions.width}}px" + 100);
+    }
+
 
     .chute-asset {
       position: relative;

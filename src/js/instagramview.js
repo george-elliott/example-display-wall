@@ -1,19 +1,19 @@
 define(
   [
     'core/assetview',
-    'hbs!src/templates/tweet',
+    'hbs!src/templates/instagram',
     'src/js/lightboxview'
   ], function(
     AssetView,
-    TweetTemplate,
+    InstagramTemplate,
     AssetLightboxView
   ) {
 
   // White Decent Asset View, Go!
   return AssetView.extend({
-    className: 'chute-asset-view twitter',
+    className: 'chute-asset-view instagram-native',
     lightboxViewType: AssetLightboxView,
-    template: TweetTemplate,
+    template: InstagramTemplate,
     onRender: function() {
       var view = this;
       setTimeout(function() {

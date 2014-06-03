@@ -3,6 +3,7 @@ define(
     'underscore',
     'src/js/tileview',
     'src/js/tweetview',
+    'src/js/instagramview',
     'components/wall',
     'masonry',
     'jquery'
@@ -10,6 +11,7 @@ define(
     _,
     AssetView,
     TweetView,
+    InstagramView,
     WallView,
     Masonry,
     $
@@ -21,8 +23,10 @@ define(
         return this.getItemViewType(options);
       },
       getItemViewType: function(options) {
-        if (options.model.get("type") === "text") {
+        if (options.model.get("service") === "twitter") {
           return new TweetView(options);
+        } else if (options.model.get("service") === "instagram") {
+          return new InstagramView(options);
         } else {
           return new AssetView(options);
         }
@@ -50,7 +54,7 @@ define(
         _.delay(function() {
           collectionView.$el.children().removeClass('chute-loaded');
         }, 1000);
-        this.$el.append('<script async src="//platform.twitter.com/widgets.js" charset="utf-8" class="chute-twitter-script"></script>');
+        this.addScript();
       },
 
       checkIfDone: function() {
@@ -60,10 +64,20 @@ define(
           this.loadedViews = [];
           this.pendingViews = [];
 
+          // var that = this;
+          // setTimeout(function() { that.masonry.layout();}, 1300);
+        }
+      },
+      addScript: function () {
+        $.getScript("//platform.twitter.com/widgets.js").done(this.layoutMasonry()) ;
+      },
+      layoutMasonry: function () {
+        if (this.currentPage === 1) {
           var that = this;
-          setTimeout(function() { that.masonry.layout();}, 1300);
+          setTimeout(function() { that.masonry.layout();}, 1250);
+        } else {
+          this.masonry.layout();
         }
       }
-
     });
 });
