@@ -90,11 +90,11 @@
 
         "width": {
           "type": "integer",
-          "default": 250
+          "default": 300
         },
         "margin": {
           "type": "integer",
-          "default": 10
+          "default": 15
         },
         "padding": {
           "type": "integer",

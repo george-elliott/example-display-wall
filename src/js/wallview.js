@@ -4,13 +4,15 @@ define(
     'src/js/tileview',
     'src/js/tweetview',
     'components/wall',
-    'masonry'
+    'masonry',
+    'jquery'
   ], function(
     _,
     AssetView,
     TweetView,
     WallView,
-    Masonry
+    Masonry,
+    $
   ) {
 
     return WallView.extend({
@@ -48,9 +50,20 @@ define(
         _.delay(function() {
           collectionView.$el.children().removeClass('chute-loaded');
         }, 1000);
+        this.$el.append('<script async src="//platform.twitter.com/widgets.js" charset="utf-8" class="chute-twitter-script"></script>');
+      },
 
-        this.$el.after('<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>');
-        this.masonry.layout();
+      checkIfDone: function() {
+
+        if (this.pendingViews.length == this.loadedViews.length) {
+          this.triggerMethod('itemviews:load', this.pendingViews);
+          this.loadedViews = [];
+          this.pendingViews = [];
+
+          var that = this;
+          setTimeout(function() { that.masonry.layout();}, 1300);
+        }
       }
+
     });
 });
