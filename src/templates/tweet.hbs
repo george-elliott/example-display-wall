@@ -1,44 +1,14 @@
-{{full_name}}
-<div class="chute-detail">
-  <div class="chute-detail-header">
-    {{# if enable.avatar}}
-      {{#if source.import_url}}
-        <a href="{{source.import_url}}" target="_blank">
-          <img src="//avatars.io/{{service}}/{{username}}" class="chute-user-avatar" />
+<blockquote class="twitter-tweet" lang="en">
+  <p>{{formatTweet caption}}</p>&mdash;
+  {{#if enable.username}}
+    {{#if source.import_url}}
+        <a href="{{source.import_url}}" target="_blank" class="chute-user-username">
+          {{#if username}}{{username}}{{else}}Anonymous{{/if}}
         </a>
-      {{else}}
-        <img src="//avatars.io/{{service}}/{{username}}" class="chute-user-avatar" />
-      {{/if}}
+        {{else}}
+      <span class="chute-user-username">
+        {{#if username}}{{username}}{{else}}Anonymous{{/if}}
+      </span>
     {{/if}}
-
-    <div class="chute-header-contents">
-      <div class="chute-table">
-        <div class="chute-table-vcenter">
-          {{#if enable.username}}
-            {{#if source.import_url}}
-              <a href="{{source.import_url}}"
-                target="_blank"
-                class="chute-user-username">
-
-                {{#if username}}@{{username}}{{else}}Anonymous{{/if}}
-              </a>
-            {{else}}
-              <span class="chute-user-username">
-                {{#if username}}@{{username}}{{else}}Anonymous{{/if}}
-              </span>
-            {{/if}}
-          {{/if}}
-          {{#if enable.time}}
-            <p class="chute-asset-timeago">{{timeAgo created_at}}</p>
-          {{/if}}
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<div class="chute-asset tweet">
-  <p class="chute-asset-caption">{{formatTweet caption}}</p>
-</div>
-
+  {{/if}}
+</blockquote>
