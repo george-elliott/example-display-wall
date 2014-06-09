@@ -54,7 +54,7 @@
     /*!{{#unless enable.masonry}}*/
     margin-right: "{{itemViewOptions.margin}}px";
     /*!{{/unless}}*/
-    margin-bottom: "{{itemViewOptions.margin}}px";
+    // margin-bottom: "{{itemViewOptions.margin}}px";
     // @include box-shadow(0 0 4px rgba(0,0,0,.3));
 
     @include opacity(1);

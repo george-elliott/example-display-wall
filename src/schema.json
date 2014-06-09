@@ -36,7 +36,7 @@
         },
         "per_page": {
           "title": "Photos per page",
-          "default": 30,
+          "default": 16,
           "type": "integer"
         }
       }
@@ -90,7 +90,7 @@
 
         "width": {
           "type": "integer",
-          "default": 300
+          "default": 260
         },
         "margin": {
           "type": "integer",

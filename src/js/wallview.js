@@ -25,8 +25,8 @@ define(
       getItemViewType: function(options) {
         if (options.model.get("service") === "twitter") {
           return new TweetView(options);
-        } else if (options.model.get("service") === "instagram") {
-          return new InstagramView(options);
+        // } else if (options.model.get("service") === "instagram") {
+          // return new InstagramView(options);
         } else {
           return new AssetView(options);
         }
@@ -68,7 +68,8 @@ define(
         }
       },
       addScript: function () {
-        $.getScript("//platform.twitter.com/widgets.js").done(this.layoutMasonry()) ;
+        // $('body').on('change', function() {debugger;});
+        $.getScript("//platform.twitter.com/widgets.js", { async: false }).then(this.layoutMasonry()) ;
       },
       layoutMasonry: function () {
         if (this.currentPage === 1) {
