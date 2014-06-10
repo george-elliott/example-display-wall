@@ -9,6 +9,6 @@ define(
     Runner
   ) {
 
-  new Runner('twitter-wall', Layout, Schema);
+  new Runner('wall', Layout, Schema);
 });
 

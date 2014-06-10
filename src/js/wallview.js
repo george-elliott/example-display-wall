@@ -50,11 +50,11 @@ define(
 
           }
         }
+        this.addScript();
         this.$el.removeClass('chute-component-loading');
         _.delay(function() {
           collectionView.$el.children().removeClass('chute-loaded');
         }, 1000);
-        this.addScript();
       },
 
       checkIfDone: function() {
@@ -68,7 +68,6 @@ define(
         }
       },
       addScript: function () {
-        // $('body').on('change', function() {debugger;});
         $.getScript("//platform.twitter.com/widgets.js", { async: false }).then(this.layoutMasonry()) ;
       },
       layoutMasonry: function () {
@@ -79,6 +78,13 @@ define(
         } else {
           this.masonry.layout();
         }
+        this.masonry.on( 'layoutComplete', this.finishedLayout);
+      },
+      finishedLayout: function () {
+        if ($('blockquote.chute-tweet-loading').remove() ) {
+          this.layout();
+        }
+        return true;
       }
     });
 });

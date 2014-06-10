@@ -1,14 +1,3 @@
-<blockquote class="twitter-tweet" lang="en">
-  <p>{{formatTweet caption}}</p>&mdash;
-  {{#if enable.username}}
-    {{#if source.import_url}}
-        <a href="{{source.import_url}}" target="_blank" class="chute-user-username">
-          {{#if username}}{{username}}{{else}}Anonymous{{/if}}
-        </a>
-        {{else}}
-      <span class="chute-user-username">
-        {{#if username}}{{username}}{{else}}Anonymous{{/if}}
-      </span>
-    {{/if}}
-  {{/if}}
+<blockquote class="chute-tweet-loading twitter-tweet" data-import="{{source.import_url}}" lang="en" style="min-height: 200px; min-width: 16%">
+    <a href="{{source.import_url}}" target="_blank"></a>
 </blockquote>
